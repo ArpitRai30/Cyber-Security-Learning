@@ -34,7 +34,7 @@ cp sourceFile destinationFile - copy file (if file is not in present directory t
 mv sourceFile destinationFile - move file
 rm file1 file2 file3 - remove/delete file (use -i with rm to get a prompt before deletion)
  
-## Directory Manangement
+## Directory Manangement Commands
 pwd - print working directory
 mkdir /path - creates a new directory (creates inside working directory if path is not given)
 mkdir -p /parent/dir - creates all necessary parent directories in between the path
@@ -42,3 +42,64 @@ rmdir dirname - removes the directory only if it is empty
 cd - change directory
 cd - - go to last directory 
 mv olddir newdir - move/rename a directory 
+
+## File Permission Commands
+(group of rwx - read, write, execute)
+(3 types - owner/user(u), group(g), other(o))
+chmod - change permissions (symbolic and absolute methods)
+1. Symblic:
+	chmod o+wx filename - add write and exe permission to other
+	chmod u-x filename - remove exe permission from owner/user
+	chmod g=rx filename - give only read and exe permission to group 
+2. Absolute: 
+0 - ---
+1 - --x
+2 - -w-
+3 - -wx
+4 - r--
+5 - r-x
+6 - rw-
+7 - rwx
+	chmod 755 filename - -rwxr-xr-x
+	chmod 743 filename - -rwxr---wx
+	chmod 043 filename - ----r---wx
+
+chown user filelist - change owner of the file (value of user can be username or userid)
+Note:- The super user, root has the unrestricted capability the ownership of any file but normal users can only change ownership of files they own.
+
+chgrp group filelist - change group of the file (value of group can be name of group or group id)
+
+chmod ug+s dirname - set SUID and SGID bit for a directory
+
+## Pipes and Filters
+| - used when output of one command is to be taken as input for another program (pipe)
+
+### Grep Command
+grep pattern file(s) - searches file or files for lines with a certain pattern  
+	ls -l | grep "Com" - search for files with "Com" and give the output in ls -l 
+
+Note:- The order of execution in a pipe is from leftmost to rightmost 
+
+Options with grep command:-
+-v - print all lines that do not match pattern
+-n - print all matched line and its line number
+-l - print only the names of files with matching lines (letter "l")
+-c - print only the count of matching lines 
+-i - match either upper or lower case  
+	ls -l | grep -i "carol.*aug" - find lines with "carol", followed by 0 or more characters abbreviated as ".*", then followed by "aug"
+
+### Sort Command
+sort file - sort the content of the file (alphabetically by default)
+
+Options with sort command:-
+-n - sort numerically (ex: 10 will sort after 2), ignore tabs and blanks
+-r - reverse the order of sort
+-f - sort lower and upper case together
++x - ignore the first x fields when sorting
+	ls -l | grep "Aug" | sort +4n - sort all files in your directory modified in Aug by order of size (+4 skips 4 fields then sorts the lines in numeric order)
+
+### pg and more Commands
+If you run text through pg or more filters the display stops after each screenful of texts.
+	ls -l | grep "Auto" | sort +4n | more - the screen will fill up with one screenful of text consisting of lines sorted by the order of file size.
+	(at the bottom is the more prompt where you can type a command to move through the sorted text)
+
