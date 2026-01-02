@@ -13,9 +13,7 @@ poweroff - shuts down the system immediately by powering off
 shutdown - shuts down the system (can be scheduled and gives warning to logged in users
 reboot - reboots the system (notifies users)
 
-## File Commands
-pwd - print working directory
-cd - change directory 
+## File Commands 
 ls - list files
 ls -l - list files with more information
 ls * - match 0 or more characters 
@@ -36,3 +34,11 @@ cp sourceFile destinationFile - copy file (if file is not in present directory t
 mv sourceFile destinationFile - move file
 rm file1 file2 file3 - remove/delete file (use -i with rm to get a prompt before deletion)
  
+## Directory Manangement
+pwd - print working directory
+mkdir /path - creates a new directory (creates inside working directory if path is not given)
+mkdir -p /parent/dir - creates all necessary parent directories in between the path
+rmdir dirname - removes the directory only if it is empty
+cd - change directory
+cd - - go to last directory 
+mv olddir newdir - move/rename a directory 
