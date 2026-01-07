@@ -68,7 +68,7 @@ if file exists edit its access and modification time to current time else create
 display contents of a file
 * `cat filename -b` - 
 display line numbers in file
-* `wc filename1 filename1` - 
+* `wc filename1 filename2` - 
 word count (totalLines totalWords totalSize(bytes) filename)
 * `cp sourceFile destinationFile` - 
 copy file (if file is not in present directory then you need to provide complete path)
@@ -94,27 +94,41 @@ go to last directory
 move/rename a directory 
 
 ## File Permission Commands
-```bash 
 (group of rwx - read, write, execute)
 (3 types - owner/user(u), group(g), other(o))
-chmod - change permissions (symbolic and absolute methods)
-1. Symblic:
-	chmod o+wx filename - add write and exe permission to other
-	chmod u-x filename - remove exe permission from owner/user
-	chmod g=rx filename - give only read and exe permission to group 
-2. Absolute: 
-0 - ---
-1 - --x
-2 - -w-
-3 - -wx
-4 - r--
-5 - r-x
-6 - rw-
-7 - rwx
-	chmod 755 filename - -rwxr-xr-x
-	chmod 743 filename - -rwxr---wx
-	chmod 043 filename - ----r---wx
-```
+* `chmod` - change permissions (symbolic and absolute methods)
+  * **Symbolic:**
+
+    ```bash
+    chmod o+wx filename 
+    chmod u-x filename 
+    chmod g=rx filename 
+    ```
+
+    * add write and exe permission to other
+    * remove exe permission from owner/user
+    * give only read and exe permission to group
+  * **Absolute:** 
+
+    ```text
+    0 : ---
+	1 : --x
+	2 : -w-
+	3 : -wx
+	4 : r--
+	5 : r-x
+	6 : rw-
+	7 : rwx
+	```
+
+	```bash
+	chmod 755 filename 
+	chmod 743 filename 
+	chmod 043 filename 
+	```
+	  * -rwxr-xr-x
+      * -rwxr---wx
+      * ----r---wx
 * `chown user filelist` - 
 change owner of the file (value of user can be username or userid)
 ```text 
@@ -132,31 +146,45 @@ used when output of one command is to be taken as input for another program (pip
 ### Grep Command
 * `grep pattern file(s)` - 
 searches file or files for lines with a certain pattern  
-```bash
-	ls -l | grep "Com" - search for files with "Com" and give the output in ls -l  
-Note:- The order of execution in a pipe is from leftmost to rightmost 
-Options with grep command:-
--v - print all lines that do not match pattern
--n - print all matched line and its line number
--l - print only the names of files with matching lines (letter "l")
--c - print only the count of matching lines 
--i - match either upper or lower case  
-	ls -l | grep -i "carol.*aug" - find lines with "carol", followed by 0 or more characters abbreviated as ".*", then followed by "aug"
+
+  ```bash
+  ls -l | grep "Com" 
+  ```
+    * search for files with "Com" and give the output in ls -l
+
+```text
+Note:- The order of execution in a pipe is from leftmost to rightmost
 ```
+* Options with grep command:-
+  * -v - print all lines that do not match pattern
+  * -n - print all matched line and its line number
+  * -l - print only the names of files with matching lines (letter "l")
+  * -c - print only the count of matching lines 
+  * -i - match either upper or lower case
+
+    ```bash
+    ls -l | grep -i "carol.*aug" 
+    ```  
+	* find lines with "carol", followed by 0 or more characters abbreviated as ".*", then followed by "aug"
+
 ### Sort Command
 * `sort file` - 
 sort the content of the file (alphabetically by default)
-```bash 
-Options with sort command:-
--n - sort numerically (ex: 10 will sort after 2), ignore tabs and blanks
--r - reverse the order of sort
--f - sort lower and upper case together
-+x - ignore the first x fields when sorting
-	ls -l | grep "Aug" | sort +4n - sort all files in your directory modified in Aug by order of size (+4 skips 4 fields then sorts the lines in numeric order)
-```
+  ```text 
+  Options with sort command:-
+  -n - sort numerically (ex: 10 will sort after 2), ignore tabs and blanks
+  -r - reverse the order of sort
+  -f - sort lower and upper case together
+  +x - ignore the first x fields when sorting
+  ```
+
+  ```bash
+  ls -l | grep "Aug" | sort +4n 
+  ```
+    * sort all files in your directory modified in Aug by order of size (+4 skips 4 fields then sorts the lines in numeric order)
 ### pg and more Commands
 If you run text through pg or more filters the display stops after each screenful of texts.
 ```bash
-	ls -l | grep "Auto" | sort +4n | more - the screen will fill up with one screenful of text consisting of lines sorted by the order of file size.
-	(at the bottom is the more prompt where you can type a command to move through the sorted text)
+ls -l | grep "Auto" | sort +4n | more 
 ```
+  * the screen will fill up with one screenful of text consisting of lines sorted by the order of file size. (at the bottom is the more prompt where you can type a command to move through the sorted text)
