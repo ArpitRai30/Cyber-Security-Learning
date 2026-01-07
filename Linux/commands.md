@@ -1,39 +1,39 @@
 # Commands
 ## help
-*`help` - 
+* `help` - 
 shows help for shell built-in commands
-*`man` - 
+* `man` - 
 opens the full manual for a command
-*`tldr` - 
+* `tldr` - 
 gives short, practical examples of common command usage
 ## System Commands
-*`whoami` - 
+* `whoami` - 
 username
-*`passwd` - 
+* `passwd` - 
 reset password
-*`users` - 
+* `users` - 
 name of all users
-*`who` - 
+* `who` - 
 detail of users
-*`logout` - 
+* `logout` - 
 logout the user
-*`halt` - 
+* `halt` - 
 bring the system down immediately 
-*`init 0` - 
+* `init 0` - 
 power off the system using predefined scripts (switches system to runlevel 0)
-*`init 6` - 
+* `init 6` - 
 reboots the system (switches system to runlevel 6)
-*`poweroff` - 
+* `poweroff` - 
 shuts down the system immediately by powering off
-*`shutdown` - 
+* `shutdown` - 
 shuts down the system (can be scheduled and gives warning to logged in users
-*`reboot` - 
+* `reboot` - 
 reboots the system (notifies users)
 
 ## File Commands 
-*`ls` - 
+* `ls` - 
 list files
-*`ls -l` - 
+* `ls -l` - 
 list files with more information
     * 1st column - file type and permission
     * 2nd column - number of memory blocks taken by the file or directory
@@ -42,68 +42,66 @@ list files with more information
     * 5th column - file size in bytes
     * 6th column - date and time when file was created or last modified
     * 7th column - represents file or directory name
-*`ls *` - 
+* `ls *` - 
 match 0 or more characters 
-*`ls ?` - 
+* `ls ?` - 
 match 1 character
-*`ls -a` - 
+* `ls -a` - 
 list files including hidden files
-*`ls -lh` - 
+* `ls -lh` - 
 list files in human readable form (size in K,M,G)
-*`ls -ld /example` - 
+* `ls -ld /example` - 
 list directories
-*`ls -lt` - 
+* `ls -lt` - 
 list files based on last modified time (recent first)
-*`ls -ltr` - 
+* `ls -ltr` - 
 reverse order of lt (recent last)
-*`ls -R` - 
+* `ls -R` - 
 display files recursively
-*`ls -F / ls --color=auto` - 
+* `ls -F / ls --color=auto` - 
 display with colour (directories in blue, soft links in green, and ordinary files in default colour)
-*`vi filename` - 
+* `vi filename` - 
 vi editor, if file is present open it else create the file
-*`touch filename` - 
+* `touch filename` - 
 if file exists edit its access and modification time to current time else create new file
-*`cat filename` - 
+* `cat filename` - 
 display contents of a file
-*`cat filename -b` - 
+* `cat filename -b` - 
 display line numbers in file
-*`wc filename1 filename1` - 
+* `wc filename1 filename1` - 
 word count (totalLines totalWords totalSize(bytes) filename)
-*`cp sourceFile destinationFile` - 
+* `cp sourceFile destinationFile` - 
 copy file (if file is not in present directory then you need to provide complete path)
-*`mv sourceFile destinationFile` - 
+* `mv sourceFile destinationFile` - 
 move file
-*`rm file1 file2 file3` - 
+* `rm file1 file2 file3` - 
 remove/delete file (use -i with rm to get a prompt before deletion)
  
 ## Directory Manangement Commands
-*`pwd` - 
+* `pwd` - 
 print working directory
-*`mkdir /path` - 
+* `mkdir /path` - 
 creates a new directory (creates inside working directory if path is not given)
-*`mkdir -p /parent/dir` - 
+* `mkdir -p /parent/dir` - 
 creates all necessary parent directories in between the path
-*`rmdir dirname` - 
+* `rmdir dirname` - 
 removes the directory only if it is empty
-*`cd` - 
+* `cd` - 
 change directory
-*`cd -` - 
+* `cd -` - 
 go to last directory 
-*`mv olddir newdir` - 
+* `mv olddir newdir` - 
 move/rename a directory 
 
 ## File Permission Commands
-``` text (group of rwx - read, write, execute)
+```bash 
+(group of rwx - read, write, execute)
 (3 types - owner/user(u), group(g), other(o))
 chmod - change permissions (symbolic and absolute methods)
 1. Symblic:
-```
-``` bash	chmod o+wx filename - add write and exe permission to other
+	chmod o+wx filename - add write and exe permission to other
 	chmod u-x filename - remove exe permission from owner/user
 	chmod g=rx filename - give only read and exe permission to group 
-```
-``` text
 2. Absolute: 
 0 - ---
 1 - --x
@@ -113,52 +111,52 @@ chmod - change permissions (symbolic and absolute methods)
 5 - r-x
 6 - rw-
 7 - rwx
-```
-``` bash	chmod 755 filename - -rwxr-xr-x
+	chmod 755 filename - -rwxr-xr-x
 	chmod 743 filename - -rwxr---wx
 	chmod 043 filename - ----r---wx
 ```
-*`chown user filelist` - 
+* `chown user filelist` - 
 change owner of the file (value of user can be username or userid)
-``` text Note:- The super user, root has the unrestricted capability the ownership of any file but normal users can only change ownership of files they own.
+```text 
+Note:- The super user, root has the unrestricted capability the ownership of any file but normal users can only change ownership of files they own.
 ```
-*`chgrp group filelist` - 
+* `chgrp group filelist` - 
 change group of the file (value of group can be name of group or group id)
-*`chmod ug+s dirname` - 
+* `chmod ug+s dirname` - 
 set SUID and SGID bit for a directory
 
 ## Pipes and Filters
-*`|` - 
+* `|` - 
 used when output of one command is to be taken as input for another program (pipe)
 
 ### Grep Command
-*`grep pattern file(s)` - 
+* `grep pattern file(s)` - 
 searches file or files for lines with a certain pattern  
-``` bash	ls -l | grep "Com" - search for files with "Com" and give the output in ls -l 
-```
-``` text Note:- The order of execution in a pipe is from leftmost to rightmost 
+```bash
+	ls -l | grep "Com" - search for files with "Com" and give the output in ls -l  
+Note:- The order of execution in a pipe is from leftmost to rightmost 
 Options with grep command:-
 -v - print all lines that do not match pattern
 -n - print all matched line and its line number
 -l - print only the names of files with matching lines (letter "l")
 -c - print only the count of matching lines 
 -i - match either upper or lower case  
-```
-``` bash	ls -l | grep -i "carol.*aug" - find lines with "carol", followed by 0 or more characters abbreviated as ".*", then followed by "aug"
+	ls -l | grep -i "carol.*aug" - find lines with "carol", followed by 0 or more characters abbreviated as ".*", then followed by "aug"
 ```
 ### Sort Command
-*`sort file` - 
+* `sort file` - 
 sort the content of the file (alphabetically by default)
-``` text Options with sort command:-
+```bash 
+Options with sort command:-
 -n - sort numerically (ex: 10 will sort after 2), ignore tabs and blanks
 -r - reverse the order of sort
 -f - sort lower and upper case together
 +x - ignore the first x fields when sorting
-```
-``` bash	ls -l | grep "Aug" | sort +4n - sort all files in your directory modified in Aug by order of size (+4 skips 4 fields then sorts the lines in numeric order)
+	ls -l | grep "Aug" | sort +4n - sort all files in your directory modified in Aug by order of size (+4 skips 4 fields then sorts the lines in numeric order)
 ```
 ### pg and more Commands
 If you run text through pg or more filters the display stops after each screenful of texts.
-``` bash	ls -l | grep "Auto" | sort +4n | more - the screen will fill up with one screenful of text consisting of lines sorted by the order of file size.
+```bash
+	ls -l | grep "Auto" | sort +4n | more - the screen will fill up with one screenful of text consisting of lines sorted by the order of file size.
 	(at the bottom is the more prompt where you can type a command to move through the sorted text)
 ```
