@@ -143,7 +143,7 @@ set SUID and SGID bit for a directory
 * `|` - 
 used when output of one command is to be taken as input for another program (pipe)
 
-### Grep Command
+### grep command
 * `grep pattern file(s)` - 
 searches file or files for lines with a certain pattern  
 
@@ -167,7 +167,7 @@ Note:- The order of execution in a pipe is from leftmost to rightmost
     ```  
 	* find lines with "carol", followed by 0 or more characters abbreviated as ".*", then followed by "aug"
 
-### Sort Command
+### sort command
 * `sort file` - 
 sort the content of the file (alphabetically by default)
   ```text 
@@ -182,7 +182,7 @@ sort the content of the file (alphabetically by default)
   ls -l | grep "Aug" | sort +4n 
   ```
     * sort all files in your directory modified in Aug by order of size (+4 skips 4 fields then sorts the lines in numeric order)
-### pg and more Commands
+### pg and more commands
 If you run text through pg or more filters the display stops after each screenful of texts.
 ```bash
 ls -l | grep "Auto" | sort +4n | more 
@@ -204,17 +204,17 @@ finds a file in given path according to conditions and perform given action.
   * `-size` - size of file 
     * `+` - for larger than
     * `-` - for less than
-    * `G` - GiB (gibibytes = 1024 MiB = 1073741824)
-    * `M` - MiB (mibibytes = 1024 KiB = 1048576)
+    * `G` - GiB (gibibytes = 1024 MiB = 1073741824 bytes)
+    * `M` - MiB (mibibytes = 1024 KiB = 1048576 bytes)
     * `k` - KiB (kibibytes = 1024 bytes)
     * `c` - bytes
   * `-mtime n` - last modified (in n days) 
   * `-atime n` - last accessed (in n days)
   * `-ctime n` - metadata change time (in n days)
-  ```text
-  Note:- When find figures out how many 24-hour periods ago the file was last accessed, any fractional part is ignored. 
-	 So  to  match -atime +1, a file has to have been accessed at least two days ago. 
-  ```
+
+```text
+Note:- When find figures out how many 24-hour periods ago the file was last accessed, any fractional part is ignored. So  to  match -atime +1, a file has to have been accessed at least two days ago. 
+```
 
   * `-user` - owned by user
   * `-group` - owned by group
