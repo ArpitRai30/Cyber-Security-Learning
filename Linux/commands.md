@@ -212,9 +212,9 @@ finds a file in given path according to conditions and perform given action.
   * `-atime n` - last accessed (in n days)
   * `-ctime n` - metadata change time (in n days)
 
-```text
-Note:- When find figures out how many 24-hour periods ago the file was last accessed, any fractional part is ignored. So  to  match -atime +1, a file has to have been accessed at least two days ago. 
-```
+    ```text
+    Note:- When find figures out how many 24-hour periods ago the file was last accessed, any fractional part is ignored. So  to  match -atime +1, a file has to have been accessed at least two days ago. 
+    ```
 
   * `-user` - owned by user
   * `-group` - owned by group
