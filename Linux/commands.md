@@ -33,7 +33,7 @@ reboots the system (notifies users)
 ## File Commands 
 * `file filename` -
 determine the type of a file
-  * Options:
+* Options with file:
   * `file ./*` -
   scan all files
   * `file -b` -
@@ -45,7 +45,7 @@ determine the type of a file
 
 * `ls` - 
 list files
-  * Options:
+* Options with ls:
   * `ls -l` - 
   list files with more information
     * 1st column - file type and permission
