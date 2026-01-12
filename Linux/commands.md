@@ -31,10 +31,23 @@ shuts down the system (can be scheduled and gives warning to logged in users
 reboots the system (notifies users)
 
 ## File Commands 
+* `file filename` -
+determine the type of a file
+  * Options:
+  * `file ./*` -
+  scan all files
+  * `file -b` -
+  remove filename from output
+  * `file -z` -
+  examines the content of a zipped file
+  * `file -r` -
+  don't recurse directories (if you give a directory file normally inspects files inside it, -r stops that)
+
 * `ls` - 
 list files
-* `ls -l` - 
-list files with more information
+  * Options:
+  * `ls -l` - 
+  list files with more information
     * 1st column - file type and permission
     * 2nd column - number of memory blocks taken by the file or directory
     * 3rd column - owner of the file (user who created the file)
@@ -42,24 +55,24 @@ list files with more information
     * 5th column - file size in bytes
     * 6th column - date and time when file was created or last modified
     * 7th column - represents file or directory name
-* `ls *` - 
-match 0 or more characters 
-* `ls ?` - 
-match 1 character
-* `ls -a` - 
-list files including hidden files
-* `ls -lh` - 
-list files in human readable form (size in K,M,G)
-* `ls -ld /example` - 
-list directories
-* `ls -lt` - 
-list files based on last modified time (recent first)
-* `ls -ltr` - 
-reverse order of lt (recent last)
-* `ls -R` - 
-display files recursively
-* `ls -F / ls --color=auto` - 
-display with colour (directories in blue, soft links in green, and ordinary files in default colour)
+  * `ls *` - 
+  match 0 or more characters 
+  * `ls ?` - 
+  match 1 character
+  * `ls -a` - 
+  list files including hidden files
+  * `ls -lh` - 
+  list files in human readable form (size in K,M,G)
+  * `ls -ld /example` - 
+  list directories
+  * `ls -lt` - 
+  list files based on last modified time (recent first)
+  * `ls -ltr` - 
+  reverse order of lt (recent last)
+  * `ls -R` - 
+  display files recursively
+  * `ls -F / ls --color=auto` - 
+  display with colour (directories in blue, soft links in green, and ordinary files in default colour)
 * `vi filename` - 
 vi editor, if file is present open it else create the file
 * `touch filename` - 
@@ -176,6 +189,7 @@ sort the content of the file (alphabetically by default)
   -r - reverse the order of sort
   -f - sort lower and upper case together
   +x - ignore the first x fields when sorting
+  -u - sort alphabetically and remove duplicate lines
   ```
 
   ```bash
@@ -223,3 +237,7 @@ finds a file in given path according to conditions and perform given action.
   * `-print` - print result (default)
   * `-delete` - delete file
   * `-exec command {} \;` - execute command on each result
+
+### strings command
+* `strings filename` -
+extracts all printable characters from any file
