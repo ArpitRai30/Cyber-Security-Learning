@@ -241,3 +241,47 @@ finds a file in given path according to conditions and perform given action.
 ### strings command
 * `strings filename` -
 extracts all printable characters from any file
+
+## Encodings and Cyphers
+### base64 encoding
+* Base64 is a binary-to-text encoding that uses 64 printable characters to represent each 6-bit segment of a sequence of byte values.
+* `base64 filename` -
+encodes the contents of a file in base64
+* `base64 -d filename` -
+decodes the content of a base64 encoded file
+
+### rot13 cypher
+* ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it in the alphabet.
+* using rot13 again on the cypher decodes it since 13x2=26.
+* `echo 'text' | tr 'A-Za-z' 'N-ZA-Mn-za-m'` -
+it uses tr command to implement rot13 cypher on text
+* `tr` - 
+it means translate, it replaces every occurence of a character from the first set with the corresponding character from the second set
+  * ex:- ```echo 'abc' | tr 'abc' 'xyz'```
+
+### hex dump
+* In a hex dump, each byte (8 bits) is represented as a two-digit hexadecimal number. Hex dumps are commonly organized into rows of 8 or 16 bytes, sometimes separated by whitespaces.
+* `xxd file > hex-file` -
+converts the file in hexdump in new file
+* `xxd -r file > rev-file` -
+reverse the hex dump in new file
+
+## Zip and Archive
+### tar archive
+* `tar file` -
+archives file 
+* `tar -xf file` -
+unarchives file 
+
+### gzip 
+* `gzip file` - 
+compresses a file in gzip format with .gz extension
+* `gzip -d file.gz` -
+decompresses the file.gz (file must have .gz extension for decompression)
+
+### bzip2
+* `bzip2 file` -
+compresses a file in bzip2 format with .bz2 extension
+* `bzip2 -d file` -
+decompresses the file 
+
