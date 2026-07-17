@@ -29,24 +29,8 @@ This repository is my learning journal for:
 ## 📈 Bandit progress
 
 <p align="center">
-  <img src="https://progress-bar.dev/0/?title=Bandit&width=500&color=0ea5e9" alt="Bandit Progress Bar" />
+  <img src="https://progress-bar.dev/13/?title=Bandit&width=500&color=0ea5e9" alt="Bandit Progress Bar" />
 </p>
-
-> Update the number in the link above to match your current Bandit level.
-
-### Example
-
-If you reach Bandit 7, change this:
-
-```md
-https://progress-bar.dev/0/?title=Bandit&width=500&color=0ea5e9
-```
-
-to:
-
-```md
-https://progress-bar.dev/7/?title=Bandit&width=500&color=0ea5e9
-```
 
 ## 🎯 Learning goals
 
