@@ -7,6 +7,7 @@ password: `HWasnPhtq9AVKe0dmk45nxy20cvUa6EG`
 * use find / to search in the root directory 
 * use -user, -group, -size with find to filter by owner, group, and size
 * use 2>/dev/null with find to redirect stderr(2) to /dev/null(a location which accepts everything but saves nothing).
+* 2>/dev/null will hide all the error messages (permission denied in this case) and print only stdout.
 * every process has 3 channels: 
   * 0: stdin (input)
   * 1: stdout (normal output)

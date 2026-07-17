@@ -29,3 +29,11 @@ Note:- The order of execution in a pipe is from leftmost to rightmost
 ls -l | grep "Auto" | sort +4n | more 
 ```
   * the screen will fill up with one screenful of text consisting of lines sorted by the order of file size. (at the bottom is the more prompt where you can type a command to move through the sorted text)
+
+* `uniq filename` -
+removes adjacent duplicate lines
+* Options with uniq command:-
+  * -c - count occurences
+  * -d - show only duplicate lines
+  * -u - show only unique (non-repeated) lines
+  * -i - ignore case (lowercase = uppercase)

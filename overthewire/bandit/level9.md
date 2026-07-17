@@ -1,6 +1,5 @@
 # level: 9
 username: bandit9
-password: `4CKMh1JI91bUIZZPXDqGanal4xvAg0JM`
 
 ## notes:
 * had to search for human readable strings in a data file, preceded by several '='

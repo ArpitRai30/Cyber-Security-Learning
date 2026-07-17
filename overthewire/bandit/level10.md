@@ -1,6 +1,5 @@
 # level: 10
 username: bandit10
-password: `FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey`
 
 ## notes:
 * had to decode a base64 encoding 

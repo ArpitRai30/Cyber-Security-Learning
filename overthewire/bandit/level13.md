@@ -1,6 +1,5 @@
 # level: 13
 username: bandit13
-password: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 
 ## notes:
 * ssh login using keys works as: ssh creates 2 keys private and public. The private keys resides at your local machine in /.ssh/keyname and the public key /.ssh/keyname.pub

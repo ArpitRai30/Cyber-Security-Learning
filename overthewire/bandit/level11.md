@@ -1,6 +1,5 @@
 # level: 11
 username: bandit11
-password: `dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr`
 
 ## notes:
 * decode rot13 substitution cypher

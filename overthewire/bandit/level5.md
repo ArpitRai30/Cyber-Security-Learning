@@ -1,6 +1,5 @@
 # level: 5
 username: bandit5
-password: `4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw`
 
 ## notes: 
 * had to search for a file with given criteria

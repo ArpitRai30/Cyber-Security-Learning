@@ -1,0 +1,14 @@
+# Bandit passwords
+overthewire/bandit/passwords.md
+
+# SSH private keys
+*.pem
+*.key
+id_rsa
+id_ed25519
+sshkey.private
+
+# Editor backups
+*.swp
+*~
+

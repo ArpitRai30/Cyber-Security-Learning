@@ -1,6 +1,5 @@
 # level: 4
 username: bandit4
-password: `2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ`
 
 ## notes:
 * had to traverse multiple files and find readable password
