@@ -32,8 +32,6 @@ This repository is my learning journal for:
   <img src="https://img.shields.io/badge/Bandit%20Progress-13%2F34%20levels-0ea5e9?style=for-the-badge" alt="Bandit Progress Badge" />
 </p>
 
-> ✍️ Update this manually by changing `13%2F34` in the image URL as you complete more Bandit levels.
-
 ## 🎯 Learning goals
 
 - Build a practical Linux command reference
